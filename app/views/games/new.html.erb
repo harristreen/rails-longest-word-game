@@ -1,0 +1,13 @@
+<h1>New Game</h1>
+
+<ul>
+<% @grid.each do |letter| %>
+  <li><%=letter%></li>
+  <%end%>
+</ul>
+
+<form action="/score" method="get" data-turbo="false" >
+  <%= hidden_field_tag :grid, @grid %>
+  <input type="text" name="guess" placeholder="Enter a word!" class="field">
+  <input type="submit" class="btn">
+</form>
